@@ -1,0 +1,13 @@
+[submodule "lib/CommonLibSSE"]
+	path = lib/CommonLibSSE
+	url = https://github.com/Ryan-rsm-McKenzie/CommonLibSSE
+[submodule "lib/simpleini"]
+	path = lib/simpleini
+	url = https://github.com/brofield/simpleini
+[submodule "lib/AutoTOML"]
+	path = lib/AutoTOML
+	url = https://github.com/Ryan-rsm-McKenzie/AutoTOML
+
+[submodule "projects/SkyrimSoulsRE"]
+	path = projects/SkyrimSoulsRE
+	url = https://github.com/Vermunds/SkyrimSoulsRE

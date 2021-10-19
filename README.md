@@ -1,2 +1,2 @@
 # SkyrimSE-Mods
- Wrapper for my Skyrim mods
+ Wrapper project for my Skyrim mods. Also my first attempt to understand CMake.

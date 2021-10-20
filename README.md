@@ -1,6 +1,8 @@
 # SkyrimSE-Mods
  Wrapper project for my Skyrim mods. Also my first attempt to understand CMake.
  
+ Work in progress.
+ 
 ## Usage:
  To clone this repository properly, run this command from the command line:
  

@@ -11,3 +11,12 @@
 [submodule "projects/SkyrimSoulsRE"]
 	path = projects/SkyrimSoulsRE
 	url = https://github.com/Vermunds/SkyrimSoulsRE
+[submodule "projects/ClassicSprintingRedone"]
+	path = projects/ClassicSprintingRedone
+	url = https://github.com/Vermunds/ClassicSprintingRedone-SE
+[submodule "projects/TimeFormatChanger"]
+	path = projects/TimeFormatChanger
+	url = https://github.com/Vermunds/TimeFormatChanger-SE
+[submodule "projects/DialogueMovementEnabler"]
+	path = projects/DialogueMovementEnabler
+	url = https://github.com/Vermunds/DialogueMovementEnabler-SE

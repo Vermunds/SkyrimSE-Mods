@@ -20,3 +20,6 @@
 [submodule "projects/DialogueMovementEnabler"]
 	path = projects/DialogueMovementEnabler
 	url = https://github.com/Vermunds/DialogueMovementEnabler-SE
+[submodule "projects/ExtendedHotkeySystem"]
+	path = projects/ExtendedHotkeySystem
+	url = https://github.com/Vermunds/ExtendedHotkeySystem-SE

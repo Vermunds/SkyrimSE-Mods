@@ -1,0 +1,14 @@
+{
+  "name": "skyrimsemods",
+  "version-string": "1",
+  "description": "",
+  "homepage": "",
+  "license": "MIT",
+  "supports": "windows & x64",
+  "dependencies": [
+    "boost-stl-interfaces",
+    "spdlog",
+    "tomlplusplus",
+    "xbyak"
+  ]
+}

@@ -9,6 +9,7 @@
     "boost-stl-interfaces",
     "spdlog",
     "tomlplusplus",
-    "xbyak"
+    "xbyak",
+    "rsm-binary-io"
   ]
 }

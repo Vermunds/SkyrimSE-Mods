@@ -1,6 +1,6 @@
 [submodule "lib/CommonLibSSE"]
 	path = lib/CommonLibSSE
-	url = https://github.com/Ryan-rsm-McKenzie/CommonLibSSE
+	url = https://github.com/Vermunds/CommonLibSSE
 [submodule "lib/simpleini"]
 	path = lib/simpleini
 	url = https://github.com/brofield/simpleini

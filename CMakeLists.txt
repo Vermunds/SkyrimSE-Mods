@@ -26,15 +26,6 @@ set(SKSE_SUPPORT_XBYAK ON)
 add_subdirectory("lib/CommonLibSSE")
 set_target_properties(CommonLibSSE PROPERTIES FOLDER "Libs")  
 
-# Set up dependencies
-message(STATUS "Setting up SimpleINI...")
-set(SIMPLEINI_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/lib/simpleini" CACHE PATH "")
-set(AUTOTOML_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/lib/AutoTOML/include" CACHE PATH "")
-
-message(STATUS "Setting up AutoTOML...")
-add_subdirectory("lib/AutoTOML")
-set_target_properties(AutoTOML PROPERTIES FOLDER "Libs")
-
 # Set up projects
 message(STATUS "Setting up SkyrimSoulsRE...")
 option(SKYRIMSOULSRE_DO_INSTALL "" ON)

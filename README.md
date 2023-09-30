@@ -1,4 +1,4 @@
-# Skyrim Mod Wrapper
+# Skyrim-SE Mods Wrapper
 
 This is a wrapper project for a collection of Skyrim mods created by [Vermunds](https://github.com/Vermunds). These mods are included as submodules along with their common dependency. This wrapper is designed to simplify the management of these mods. 
 

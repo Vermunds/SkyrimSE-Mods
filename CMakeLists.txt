@@ -19,6 +19,8 @@ endif()
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
  
+add_compile_definitions(SKYRIM_SUPPORT_AE)
+
 # Set up CommonLibSSE
 message(STATUS "Setting up CommonLibSSE...")
 set(SKSE_SUPPORT_XBYAK ON)

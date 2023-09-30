@@ -37,8 +37,7 @@ Additionally, it includes a common dependency:
    git submodule update --init --recursive
    ```
 
-2. Set up vcpkg and install dependencies:
-   Follow the instructions in the [vcpkg GitHub repository](https://github.com/microsoft/vcpkg) to set up vcpkg on your system if it is not installed already.
+2. Set up vcpkg: Follow the instructions in the [vcpkg GitHub repository](https://github.com/microsoft/vcpkg) to set up vcpkg on your system if it is not installed already.
    You have to provide the environment variable `VCPKG_ROOT` when configuring this project. It should point to the directory where vcpkg was installed (where `vcpkg.exe` is located).
 
 4. Open the folder in Visual Studio **OR** configure and build the project using CMake:

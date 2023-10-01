@@ -40,6 +40,13 @@ Additionally, it includes a common dependency:
 2. Set up vcpkg: Follow the instructions in the [vcpkg GitHub repository](https://github.com/microsoft/vcpkg) to set up vcpkg on your system if it is not installed already.
    You have to provide the environment variable `VCPKG_ROOT` when configuring this project. It should point to the directory where vcpkg was installed (where `vcpkg.exe` is located).
 
+   
+3. Set environment variables for automatic build copy (optional):
+   - Option 1: Set `SKYRIM_DATA_PATH` to the Skyrim Data folder (NOT the SKSE/Plugins folder!)
+   - Option 2: Set `MO_MODS_FOLDER_PATH` to the Mod Organizer mods folder
+   
+   Both options cannot be set at the same time.
+
 4. Open the folder in Visual Studio **OR** configure and build the project using CMake:
 
    ```shell
@@ -48,9 +55,8 @@ Additionally, it includes a common dependency:
    cmake ..
    cmake --build .
    ```
-
-5. The built mod files will be located in the respective mod folders within the `build` directory.
-
+   
 ## Contributing
 
 If you'd like to contribute to any of the mods, please refer to the individual mod repositories linked above.
+

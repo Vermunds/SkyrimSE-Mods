@@ -47,7 +47,9 @@ Additionally, it includes a common dependency:
    
    Both options cannot be set at the same time.
 
-4. Open the folder in Visual Studio **OR** configure and build the project using CMake:
+4. If you do not want to build every included mod, edit `CMakeLists.txt` and remove the `setup_mod(<MOD NAME>)` lines for the mods you don't want to build.
+
+5. Open the folder in Visual Studio **OR** configure and build the project using CMake:
 
    ```shell
    mkdir build

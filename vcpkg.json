@@ -5,6 +5,7 @@
     "xbyak",
     "rsm-binary-io",
 	"simpleini",
-	"tomlplusplus"
+	"tomlplusplus",
+	"rapidcsv"
   ]
 }

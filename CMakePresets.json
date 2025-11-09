@@ -1,57 +1,57 @@
 {
-    "cmakeMinimumRequired": {
-        "major": 3,
-        "minor": 28,
-        "patch": 0
-    },
-    "configurePresets": [
-        {
-            "architecture": {
-                "strategy": "external",
-                "value": "x64"
-            },
-            "binaryDir": "${sourceDir}/build/${presetName}",
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_C_COMPILER": "cl.exe",
-                "CMAKE_CXX_COMPILER": "cl.exe",
-                "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
-                "VCPKG_HOST_TRIPLET": "x64-windows-static-md",
-                "VCPKG_TARGET_TRIPLET": "x64-windows-static-md"
-            },
-            "generator": "Ninja",
-            "hidden": true,
-            "name": "common",
-            "toolset": {
-                "strategy": "external",
-                "value": "v143,host=x64"
-            },
-            "vendor": {
-                "microsoft.com/VisualStudioSettings/CMake/1.0": {
-                    "hostOS": [
-                        "Windows"
-                    ]
-                }
-            }
-        },
-        {
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug"
-            },
-            "description": "Compile in Debug mode",
-            "displayName": "Debug",
-            "inherits": "common",
-            "name": "Debug"
-        },
-        {
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Release"
-            },
-            "description": "Compile in Release mode",
-            "displayName": "Release",
-            "inherits": "common",
-            "name": "Release"
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 28,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "architecture": {
+        "strategy": "external",
+        "value": "x64"
+      },
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_C_COMPILER": "cl.exe",
+        "CMAKE_CXX_COMPILER": "cl.exe",
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "VCPKG_HOST_TRIPLET": "x64-windows-static-md",
+        "VCPKG_TARGET_TRIPLET": "x64-windows-static-md"
+      },
+      "generator": "Ninja",
+      "hidden": true,
+      "name": "common",
+      "toolset": {
+        "strategy": "external",
+        "value": "v143,host=x64"
+      },
+      "vendor": {
+        "microsoft.com/VisualStudioSettings/CMake/1.0": {
+          "hostOS": [
+            "Windows"
+          ]
         }
-    ],
-    "version": 3
+      }
+    },
+    {
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      },
+      "description": "Compile in Debug mode",
+      "displayName": "Debug",
+      "inherits": "common",
+      "name": "Debug"
+    },
+    {
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      },
+      "description": "Compile in Release mode",
+      "displayName": "Release",
+      "inherits": "common",
+      "name": "Release"
+    }
+  ],
+  "version": 3
 }

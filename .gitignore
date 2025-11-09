@@ -13,3 +13,4 @@ build/*
 .vscode/*
 out/*
 .vs/*
+CMakeUserPresets.json

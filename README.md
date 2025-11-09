@@ -16,15 +16,14 @@ Additionally, it includes a common dependency:
 
 - [CommonLibSSE](https://github.com/Vermunds/CommonLibSSE) (fork of [powerof3](https://github.com/powerof3/CommonLibSSE))
 
-**Note:** These mods currently only intended for use with Skyrim Anniversary Edition only (1.6.640 or newer) and they are not compatible with Special Edition. For older versions, refer to older commits in the respective mod repository.
+**Note:** These mods currently only intended for use with the latest version of Skyrim Anniversary Edition (1.6.1170 for Steam or 1.6.1179 for GOG) and they are not compatible with older versions.
 
 ## Build Instructions
 
 ### Prerequisites
 
-- CMake (minimum version 3.21)
-- Visual Studio (Windows)
-- Skyrim Anniversary Edition (1.6.640 or newer)
+- CMake
+- Visual Studio
 - [vcpkg](https://github.com/microsoft/vcpkg) for managing dependencies
 
 ### Building

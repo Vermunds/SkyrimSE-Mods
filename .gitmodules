@@ -1,7 +1,7 @@
 [submodule "lib/CommonLibSSE"]
 	path = lib/CommonLibSSE
 	url = https://github.com/Vermunds/CommonLibSSE
-	branch = ng
+	branch = dev
 
 [submodule "projects/SkyrimSoulsRE"]
 	path = projects/SkyrimSoulsRE

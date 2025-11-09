@@ -1,12 +1,6 @@
 cmake_minimum_required(VERSION 3.21)
 set(CMAKE_SYSTEM_VERSION 10.0)
 
-# Set up vcpkg
-if(DEFINED ENV{VCPKG_ROOT} AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
-  set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
-endif()
-set(VCPKG_TARGET_TRIPLET "x64-windows-static-md" CACHE STRING "")
-
 project(
   SkyrimRE
   LANGUAGES CXX

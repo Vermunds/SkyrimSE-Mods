@@ -53,10 +53,7 @@ add_subdirectory("lib/CommonLibSSE")
 set_target_properties(CommonLibSSE PROPERTIES FOLDER "Libs")
 
 # Set up projects
-function(setup_mod MOD_NAME)
-    message(STATUS "Setting up ${MOD_NAME}...")
-    add_subdirectory("projects/${MOD_NAME}")
-
+function(setup_mod_target MOD_NAME MOD_FOLDER_NAME)
     set_target_properties(${MOD_NAME} PROPERTIES FOLDER "Mods")
 
     target_compile_features(
@@ -103,7 +100,7 @@ function(setup_mod MOD_NAME)
 	if(DEFINED SKYRIM_DATA_PATH)
 		set(${MOD_NAME}_OUTPUT_DIR "${SKYRIM_DATA_PATH}/SKSE/Plugins")
 	elseif(DEFINED MO_MODS_FOLDER_PATH)
-		set(${MOD_NAME}_OUTPUT_DIR "${MO_MODS_FOLDER_PATH}/${MOD_NAME}/SKSE/Plugins")
+		set(${MOD_NAME}_OUTPUT_DIR "${MO_MODS_FOLDER_PATH}/${MOD_FOLDER_NAME}/SKSE/Plugins")
 	endif()
 
 	if (DEFINED ${MOD_NAME}_OUTPUT_DIR)
@@ -117,7 +114,21 @@ function(setup_mod MOD_NAME)
 
 endfunction()
 
+function(setup_mod MOD_NAME)
+    message(STATUS "Setting up ${MOD_NAME}...")
+
+    # A project defines a single target named after its folder, unless it sets
+    # MOD_TARGETS (PARENT_SCOPE) to the list of targets it wants set up.
+    set(MOD_TARGETS ${MOD_NAME})
+    add_subdirectory("projects/${MOD_NAME}")
+
+    foreach(MOD_TARGET ${MOD_TARGETS})
+        setup_mod_target(${MOD_TARGET} ${MOD_NAME})
+    endforeach()
+endfunction()
+
 setup_mod(ClassicSprintingRedone)
+setup_mod(CleanSaveAutoReloader)
 setup_mod(DialogueMovementEnabler)
 setup_mod(ExtendedHotkeySystem)
 setup_mod(SkyrimSoulsRE)

@@ -18,3 +18,6 @@
 [submodule "projects/ExtendedHotkeySystem"]
 	path = projects/ExtendedHotkeySystem
 	url = https://github.com/Vermunds/ExtendedHotkeySystem-SE
+[submodule "projects/CleanSaveAutoReloader"]
+	path = projects/CleanSaveAutoReloader
+	url = https://github.com/Vermunds/Skyrim-CleanSaveAutoReloader

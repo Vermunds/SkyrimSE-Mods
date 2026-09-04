@@ -7,10 +7,11 @@ This is a wrapper project for a collection of Skyrim mods created by [Vermunds](
 This repository contains the following Skyrim mods:
 
 1. [ClassicSprintingRedone-SE](https://github.com/Vermunds/ClassicSprintingRedone-SE/)
-2. [DialogueMovementEnabler-SE](https://github.com/Vermunds/DialogueMovementEnabler-SE)
-3. [ExtendedHotkeySystem-SE](https://github.com/Vermunds/ExtendedHotkeySystem-SE)
-4. [SkyrimSoulsRE](https://github.com/Vermunds/SkyrimSoulsRE)
-5. [TimeFormatChanger-SE](https://github.com/Vermunds/TimeFormatChanger-SE)
+2. [Skyrim-CleanSaveAutoReloader](https://github.com/Vermunds/Skyrim-CleanSaveAutoReloader)
+3. [DialogueMovementEnabler-SE](https://github.com/Vermunds/DialogueMovementEnabler-SE)
+4. [ExtendedHotkeySystem-SE](https://github.com/Vermunds/ExtendedHotkeySystem-SE)
+5. [SkyrimSoulsRE](https://github.com/Vermunds/SkyrimSoulsRE)
+6. [TimeFormatChanger-SE](https://github.com/Vermunds/TimeFormatChanger-SE)
 
 Additionally, it includes a common dependency:
 

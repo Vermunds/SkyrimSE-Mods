@@ -1,9 +1,17 @@
 {
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "name": "skyrim-se-mods",
+  "version": "1.0.0",
+  "description": "Mods for Skyrim Special Edition (Anniversary Edition)",
+  "homepage": "https://github.com/Vermunds/SkyrimSE-Mods",
+  "license": "MIT",
+  "supports": "windows & x64",
+  "builtin-baseline": "04a9d8e5212d01ee1dd9478eadd9caade4f8b0d4",
   "dependencies": [
-    "spdlog",
-    "xbyak",
     "rsm-binary-io",
     "simpleini",
-    "tomlplusplus"
+    "spdlog",
+    "tomlplusplus",
+    "xbyak"
   ]
 }

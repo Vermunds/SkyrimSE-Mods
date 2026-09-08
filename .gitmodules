@@ -21,3 +21,9 @@
 [submodule "projects/CleanSaveAutoReloader"]
 	path = projects/CleanSaveAutoReloader
 	url = https://github.com/Vermunds/Skyrim-CleanSaveAutoReloader
+[submodule "lib/FUCK"]
+	path = lib/FUCK
+	url = https://github.com/Fuzzlesz/FUCK
+[submodule "lib/SKSE-Menu-Framework-3-API"]
+	path = lib/SKSE-Menu-Framework-3-API
+	url = https://github.com/QTR-Modding/SKSE-Menu-Framework-3-API

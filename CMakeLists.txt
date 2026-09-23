@@ -52,6 +52,10 @@ set(BUILD_TESTS OFF)
 add_subdirectory("lib/CommonLibSSE")
 set_target_properties(CommonLibSSE PROPERTIES FOLDER "Libs")
 
+# Set up ModConfigUI
+message(STATUS "Setting up ModConfigUI...")
+add_subdirectory("lib/ModConfigUI")
+
 # Set up projects
 function(setup_mod_target MOD_NAME MOD_FOLDER_NAME)
     set_target_properties(${MOD_NAME} PROPERTIES FOLDER "Mods")
@@ -97,21 +101,57 @@ function(setup_mod_target MOD_NAME MOD_FOLDER_NAME)
 			"$<$<CONFIG:RELEASE>:/INCREMENTAL:NO;/OPT:REF;/OPT:ICF;/DEBUG:FULL>"
 	)
 
-	if(DEFINED SKYRIM_DATA_PATH)
-		set(${MOD_NAME}_OUTPUT_DIR "${SKYRIM_DATA_PATH}/SKSE/Plugins")
-	elseif(DEFINED MO_MODS_FOLDER_PATH)
-		set(${MOD_NAME}_OUTPUT_DIR "${MO_MODS_FOLDER_PATH}/${MOD_FOLDER_NAME}/SKSE/Plugins")
-	endif()
+	get_mod_data_dir(MOD_DATA_DIR ${MOD_FOLDER_NAME})
 
-	if (DEFINED ${MOD_NAME}_OUTPUT_DIR)
-		set_target_properties(${MOD_NAME} PROPERTIES
-			RUNTIME_OUTPUT_DIRECTORY "${${MOD_NAME}_OUTPUT_DIR}"
-			CMAKE_COMPILE_PDB_OUTPUT_DIRECTORY "${${MOD_NAME}_OUTPUT_DIR}"
-		)
-	else()
+	if (NOT MOD_DATA_DIR)
 		message(STATUS "No install path specified for mod ${MOD_NAME}. Skipping post-build copy command.")
 	endif()
 
+endfunction()
+
+# The root of the mod's Data layout in the deployment target, empty when no install path is set.
+function(get_mod_data_dir OUT_VAR MOD_FOLDER_NAME)
+	if(DEFINED SKYRIM_DATA_PATH)
+		set(${OUT_VAR} "${SKYRIM_DATA_PATH}" PARENT_SCOPE)
+	elseif(DEFINED MO_MODS_FOLDER_PATH)
+		set(${OUT_VAR} "${MO_MODS_FOLDER_PATH}/${MOD_FOLDER_NAME}" PARENT_SCOPE)
+	else()
+		set(${OUT_VAR} "" PARENT_SCOPE)
+	endif()
+endfunction()
+
+# Installs a mod into the deployment target: the binaries the build produced.
+#
+# The build keeps its own output in the build folder and only the finished files are copied over, so
+# the intermediate ones (.ilk, vc140.pdb) never end up in the game folder.
+function(setup_mod_deploy MOD_NAME)
+	get_mod_data_dir(MOD_DATA_DIR ${MOD_NAME})
+
+	if (NOT MOD_DATA_DIR)
+		return()
+	endif()
+
+	set(DEPLOY_COMMANDS
+		COMMAND ${CMAKE_COMMAND} -E make_directory "${MOD_DATA_DIR}/SKSE/Plugins"
+	)
+
+	# The binaries and their debug symbols. Every target of the mod goes to SKSE/Plugins.
+	foreach(MOD_TARGET ${ARGN})
+		list(APPEND DEPLOY_COMMANDS
+			COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_FILE:${MOD_TARGET}>" "${MOD_DATA_DIR}/SKSE/Plugins"
+			COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_PDB_FILE:${MOD_TARGET}>" "${MOD_DATA_DIR}/SKSE/Plugins"
+		)
+	endforeach()
+
+	# Part of the default build and depends on the mod, so a build always deploys what it just produced.
+	add_custom_target(
+		${MOD_NAME}_Deploy ALL
+		${DEPLOY_COMMANDS}
+		COMMENT "Deploying ${MOD_NAME} to ${MOD_DATA_DIR}..."
+		VERBATIM
+	)
+	set_target_properties(${MOD_NAME}_Deploy PROPERTIES FOLDER "Deploy")
+	add_dependencies(${MOD_NAME}_Deploy ${ARGN})
 endfunction()
 
 function(setup_mod MOD_NAME)
@@ -125,6 +165,9 @@ function(setup_mod MOD_NAME)
     foreach(MOD_TARGET ${MOD_TARGETS})
         setup_mod_target(${MOD_TARGET} ${MOD_NAME})
     endforeach()
+
+    # One deployment per mod, no matter how many targets it builds.
+    setup_mod_deploy(${MOD_NAME} ${MOD_TARGETS})
 endfunction()
 
 setup_mod(ClassicSprintingRedone)

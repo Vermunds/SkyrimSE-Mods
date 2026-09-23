@@ -27,3 +27,6 @@
 [submodule "lib/SKSE-Menu-Framework-3-API"]
 	path = lib/SKSE-Menu-Framework-3-API
 	url = https://github.com/QTR-Modding/SKSE-Menu-Framework-3-API
+[submodule "lib/ModConfigUI"]
+	path = lib/ModConfigUI
+	url = https://github.com/Vermunds/ModConfigUI

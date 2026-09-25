@@ -80,3 +80,6 @@ Additionally, it includes these common dependencies:
 
 If you'd like to contribute to any of the mods, please refer to the individual mod repositories linked above.
 
+## License
+
+This software is available under the GNU General Public License v3.0 or later, with a modding exception. See [LICENSE](./LICENSE) and [EXCEPTIONS.md](./EXCEPTIONS.md) for details.
